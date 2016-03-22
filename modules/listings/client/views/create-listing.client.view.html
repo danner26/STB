@@ -1,0 +1,251 @@
+<section ng-controller="ListingsController">
+  <div class="page-header">
+    <h1>Create Listing</h1>
+  </div>
+  <div class="col-md-12">
+
+    <div class="container" id="bodyContent">
+      <form name="submissionForm" class="form-horizontal" ng-submit="create(submissionForm.$valid)" novalidate>
+        <!-- Name -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Full name</label>
+          <div class="col-xs-4">
+            <input type="text" class="form-control" name="firstName" ng-model="newListingData.firstName" placeholder="First name" />
+          </div>
+          <div class="col-xs-4">
+            <input type="text" class="form-control" name="lastName" ng-model="newListingData.lastName" placeholder="Last name" />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Email address</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="email" ng-model="newListingData.contactEmail" placeholder="john.doe@domain.com"/>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Contact Phone</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="phone" ng-model="newListingData.contactPhone" placeholder=""/>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Field State</label>
+          <div class="col-xs-8">
+            <select class="form-control" id="state" ng-model="newListingData.fieldState" name="state">
+              <option value="Alaska">Alaska</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="Arizona">Arizona</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Maine">Maine</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Montana">Montana</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New York">New York</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Puerto Rico">Puerto Rico</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Washington">Washington</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Field City/Town</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldCity" placeholder="Balltown"/>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Field Address</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldAddress" placeholder="123 Field Address, NJ 00123"/>
+          </div>
+        </div>
+
+
+        <!-- Sanctioning Body -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Age Group</label>
+          <div class="col-xs-8">
+            <select id="ageGroup" type="button" ng-init="newListingData.ageGroup = 'All Ages'" ng-model="newListingData.ageGroup" class="form-control">
+              <option selected default>All Ages</option>
+              <option> > 8</option>
+              <option> > 10</option>
+              <option> > 12</option>
+              <option> > 14</option>
+              <option> > 16</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Level of Play</label>
+          <div class="col-xs-8">
+            <select type="button" ng-init="newListingData.level = 'All Levels'" ng-model="newListingData.level" class="form-control">
+              <option selected="selected">All Levels</option>
+              <option>Level 1</option>
+              <option>Level 2</option>
+              <option>Level 3</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Sanctioning Body -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Sanctioning Body</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.sanctioningBody" value="N/A"/>
+          </div>
+        </div>
+
+        <!-- Max Teams -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Max Teams</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.maxTeams" placeholder="Max Teams"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Entry Fee</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.entryFee" placeholder="2000.00"/>
+          </div>
+        </div>
+
+        <!-- Additional Fees -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Additional Fees</label>
+          <div class="col-xs-8">
+            <div class="radio" style="display:inline-block;">
+              <label>
+                <input type="radio" name="addFee" ng-model="newListingData.fees" value="yes" /> Yes
+              </label>
+            </div>
+            <div class="radio" style="display:inline-block; padding-left:2em;">
+              <label>
+                <input type="radio" name="addFee" ng-model="newListingData.fees" value="no" /> No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Games Guaranteed -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Games Guaranteed</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="gamesGuar" ng-model="newListingData.gamesGuar" value="N/A"/>
+          </div>
+        </div>
+
+        <!-- Umpires -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label"># of Umpires</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="gamesGuar" ng-model="newListingData.umpires" value="N/A"/>
+          </div>
+        </div>
+
+        <!-- Time Limit -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Time Limit</label>
+          <div class="col-xs-8">
+            <div class="radio" style="display:inline-block;">
+              <label>
+                <input type="radio" name="addFee" ng-model="newListingData.timeLimit" value="yes" /> Yes
+              </label>
+            </div>
+            <div class="radio" style="display:inline-block; padding-left:2em;">
+              <label>
+                <input type="radio" name="addFee" ng-model="newListingData.timeLimit" value="no" /> No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Type of Listing</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.gameType" placeholder="Finals/Tournament/etc.."/>
+          </div>
+        </div>
+
+        <!-- Start Date -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Start Date</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="startDate" ng-model="newListingData.startDate" placeholder="MM/DD/YYYY" />
+          </div>
+        </div>
+
+        <!-- Additional Details -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Additional Details/Comments</label>
+          <div class="col-xs-8">
+            <textarea name="notEmpty" class="form-control" ng-model="newListingData.description" placeholder="Any Additional Comments/Details here" style="height: 10em;"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-3 control-label"></label>
+          <div class="col-xs-8">
+            <input type="submit" class="btn btn-primary"  value="Submit Listing" />
+            <input type="reset" class="btn btn-danger" value="Reset Listing" />
+            <div ng-show="error" class="text-danger">
+              <strong ng-bind="error"></strong>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div><!--container-->
+  </div>
+</section>

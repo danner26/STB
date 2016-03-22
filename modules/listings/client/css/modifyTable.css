@@ -1,0 +1,39 @@
+﻿/*!
+ * STB - Modify Table v 1.2.0
+ * Dan's Tech Support Unlimited (http://danstechsupport.com)
+ * DTSU Dev Team (http://devteam.danstechsupport.com)
+ */
+
+/*.modifiableRow {
+    background-color: #D12026;
+    border-bottom: 2px solid #000;
+}*/
+/*nav.navbar.navbar-inverse.navbar-static-top {
+    margin-bottom: 10px;
+    border-bottom: 5px #B30000;
+}*/
+ul.nav.navbar-nav.ng-scope > li:hover {
+    transition: all 0.3s ease 0s;
+    box-shadow: inset 0 0 0 3px #B30000;
+}
+ul.nav.navbar-nav > li.active {
+    transition: all 0.3s ease 0s;
+    border-bottom: 2px ridge #B30000;
+}
+div.navbar-header:hover {
+    transition: all 0.3s ease 0s;
+    border-bottom: 3px solid #B30000;
+}
+/*NEEDS IF div.list-group-item > div.in THEN border {
+    background-color: #D12026;
+    border-bottom: 2px solid #000;
+}*/
+.outline {
+    border-left: 2px solid #D12026;
+    border-right: 2px solid #D12026;
+    border-bottom: 4px solid #000;
+}
+div.list-group-item > div.collapse {
+    background-color: none;
+    border-bottom: none;
+}
