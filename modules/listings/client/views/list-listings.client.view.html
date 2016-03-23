@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+<section ng-controller="ListingsController" ng-init="find()">
+  <div style="padding-top: 1em;">
+    <div style="float:left;" ng-click="listing.collapse = !listing.collapse">
+      <!-- onclick: hide display until its loaded or prevent default animation -->
+      <button class="btn btn-default btn-xs" style="outline:none;" onclick="filterDropdown(this)">
+        <span class="glyphicon glyphicon-chevron-down" style="padding: 8px 5px; width: 100%; height: 100%;"></span>
+      </button>
+      <span id="activeFilter" style="color: #32cd32; display: none; font-weight: 800; padding-left:2em;">Filter Active</span>
+    </div>
+    <div class="pull-right" style="padding-bottom:1em;">
+      <input type="text" class="form-control" ng-model="search.terms" placeholder="Term Search" />
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div collapse="!listing.collapse"  id="collapsableBox" style="background-color:white;" >
+            <div class="filterRow ">
+=======
 <section ng-controller="ListingsController" ng-init="find()" style="background-color: rgba(255, 255, 255, 0.4); padding: 24px; margin-top: 24px;">
     <div>
         <div style="float:left;" ng-click="listing.collapse = !listing.collapse"> <!-- onclick: hide display until its loaded or prevent default animation -->
@@ -13,10 +31,11 @@
     </div>
     <div collapse="!listing.collapse" id="collapsableBox">
             <div class="filterRow">
+>>>>>>> 722d578cfdab63672d69d668723f22fa8017855c
                 <div>
                     <div>State</div>
-                    <select id="state" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any State</option>
+                    <select id="state " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected "> Any State</option>
                         <option> New Jersey</option>
                         <option> New York</option>
                         <option> Pennsylvania</option>
@@ -24,8 +43,8 @@
                 </div>
                 <div>
                     <div>Distance from You</div>
-                    <select id="distance" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any Distance</option>
+                    <select id="distance " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected "> Any Distance</option>
                         <option> > 25 Miles</option>
                         <option> > 50 Miles</option>
                         <option> > 100 miles</option>
@@ -33,8 +52,8 @@
                 </div>
                 <div>
                     <div>Age Group</div>
-                    <select id="ageGroup" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> All Age Groups</option>
+                    <select id="ageGroup " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected "> All Age Groups</option>
                         <option>8u</option>
                         <option>10u</option>
                         <option>12u</option>
@@ -47,8 +66,8 @@
                 </div>
                 <div>
                     <div>Level of Play</div>
-                    <select id="levelOfPlay" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> All Levels</option>
+                    <select id="levelOfPlay " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected "> All Levels</option>
                         <option>A</option>
                         <option>B</option>
                         <option>C</option>
@@ -60,8 +79,8 @@
                 </div>
                 <div>
                     <div>Number of Umpires</div>
-                    <select id="umpires" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected">Any Umpire Count</option>
+                    <select id="umpires " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected ">Any Umpire Count</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -70,27 +89,31 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
+            <div class="filterRow ">
+=======
             <div class="filterRow">
+>>>>>>> 722d578cfdab63672d69d668723f22fa8017855c
                 <div>
                     <div>Max Team Limit</div>
-                    <select id="maxTeams" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any Amount</option>
+                    <select id="maxTeams " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected "> Any Amount</option>
                         <option> > Limit 1</option>
                         <option> > Limit 2</option>
                     </select>
                 </div>
                 <div>
                     <div>Additional Fee's (Y/N)</div>
-                    <select id="addFees" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any Additional</option>
+                    <select id="addFees " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected "> Any Additional</option>
                         <option> Yes</option>
                         <option> No</option>
                     </select>
                 </div>
                 <div>
                     <div>Games Guaranteed</div>
-                    <select id="gamesGuar" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any Amount</option>
+                    <select id="gamesGuar " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected "> Any Amount</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -101,16 +124,16 @@
                 </div>
                 <div>
                     <div>Time Limit</div>
-                    <select id="timeLimit" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected">All Limits</option>
+                    <select id="timeLimit " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected ">All Limits</option>
                         <option>Yes</option>
                         <option>No</option>
                     </select>
                 </div>
                 <div>
                     <div>Type of Play</div>
-                    <select id="typeOfPlay" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> All Types</option>
+                    <select id="typeOfPlay " type="button " class="btn btn-primary dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><span class="caret "></span>
+                        <option selected="selected "> All Types</option>
                         <option>Tournament</option>
                         <option>League</option>
                         <option>Camp</option>
@@ -119,108 +142,108 @@
                 </div>
             </div>
     </div>
-    <hr style="width:100%;margin-top:0px;margin-bottom:0.5em;">
+    <hr style="width:100%;margin-top:0px;margin-bottom:0.5em; ">
     </div>
     <div>
-        <div style="padding: 4px;">
-            <div class="listingSubItem">{{ listing.firstName }} {{ listing.lastName }}</div>
-            <div class="listingSubItem">{{ listing.contactEmail }}</div>
-            <div class="listingSubItem">{{ listing.contactPhone }}</div>
-            <div class="listingSubItem">{{ listing.fieldAddress }}</div>
-            <div class="listingSubItem">{{ listing.sanctioningBody }}</div>
-            <div class="listingSubItem">{{ listing.maxTeams }}</div>
-            <div class="clearfix"></div>
+        <div style="padding: 4px; ">
+            <div class="listingSubItem ">{{ listing.firstName }} {{ listing.lastName }}</div>
+            <div class="listingSubItem ">{{ listing.contactEmail }}</div>
+            <div class="listingSubItem ">{{ listing.contactPhone }}</div>
+            <div class="listingSubItem ">{{ listing.fieldAddress }}</div>
+            <div class="listingSubItem ">{{ listing.sanctioningBody }}</div>
+            <div class="listingSubItem ">{{ listing.maxTeams }}</div>
+            <div class="clearfix "></div>
         </div>
     </div>
-    <div class="list-group" style="word-wrap:break-word;">
-        <div class="list-group-item" style="font-weight: bold; font-size: 16px; background: #eaeaea; border-bottom: 2px solid black;">
-            <div class="sideButton">
-                <span class="glyphicon glyphicon-refresh" style="padding-left:6px;" ng-click="find()"></span>
+    <div class="list-group " style="word-wrap:break-word; ">
+        <div class="list-group-item " style="font-weight: bold; font-size: 16px; background: #eaeaea; border-bottom: 2px solid black; ">
+            <div class="sideButton ">
+                <span class="glyphicon glyphicon-refresh " style="padding-left:6px; " ng-click="find() "></span>
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 Field State
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 Field City
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 Age Group
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 Level of Play
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 Entry Fee
             </div>
-            <div class="clearfix"></div>
+            <div class="clearfix "></div>
         </div>
 
-        <div ng-repeat="listing in listings | filter: search.terms" ng-click="listing.collapse = !listing.collapse" class="list-group-item"
-        onclick="modifyTRow(this);">
-            <div class="sideButton">
-                <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button>
+        <div ng-repeat="listing in listings | filter: search.terms " ng-click="listing.collapse=! listing.collapse " class="list-group-item "
+        onclick="modifyTRow(this); ">
+            <div class="sideButton ">
+                <button class="btn btn-default btn-xs "><span class="glyphicon glyphicon-eye-open "></span></button>
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 {{ listing.fieldState }}
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 {{ listing.fieldCity }}
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 {{ listing.ageGroup }}
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 {{ listing.level }}
             </div>
-            <div class="listingItem">
+            <div class="listingItem ">
                 {{ listing.entryFee }}
             </div>
-            <div class="clearfix"></div>
-            <div collapse="!listing.collapse" style="padding-top: 16px;" ng-click="$event.stopPropagation()" id="collapsableBox">
-                <hr style="width:100%;margin-top:0px;margin-bottom:0.5em;">
-                <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd;">
-                    <div class="listingSubItem">Contact Name</div>
-                    <div class="listingSubItem">Contact Email</div>
-                    <div class="listingSubItem">Contact Phone</div>
-                    <div class="listingSubItem">Field Address</div>
-                    <div class="listingSubItem">Sanctioning Body</div>
-                    <div class="listingSubItem">Max Teams</div>
-                    <div class="clearfix"></div>
+            <div class="clearfix "></div>
+            <div collapse="!listing.collapse " style="padding-top: 16px; " ng-click="$event.stopPropagation() " id="collapsableBox ">
+                <hr style="width:100%;margin-top:0px;margin-bottom:0.5em; ">
+                <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd; ">
+                    <div class="listingSubItem ">Contact Name</div>
+                    <div class="listingSubItem ">Contact Email</div>
+                    <div class="listingSubItem ">Contact Phone</div>
+                    <div class="listingSubItem ">Field Address</div>
+                    <div class="listingSubItem ">Sanctioning Body</div>
+                    <div class="listingSubItem ">Max Teams</div>
+                    <div class="clearfix "></div>
                 </div>
-                <div style="padding: 4px;">
-                    <div class="listingSubItem">{{ listing.firstName }} {{ listing.lastName }}</div>
-                    <div class="listingSubItem">{{ listing.contactEmail }}</div>
-                    <div class="listingSubItem">{{ listing.contactPhone }}</div>
-                    <div class="listingSubItem">{{ listing.fieldAddress }}</div>
-                    <div class="listingSubItem">{{ listing.sanctioningBody }}</div>
-                    <div class="listingSubItem">{{ listing.maxTeams }}</div>
-                    <div class="clearfix"></div>
+                <div style="padding: 4px; ">
+                    <div class="listingSubItem ">{{ listing.firstName }} {{ listing.lastName }}</div>
+                    <div class="listingSubItem ">{{ listing.contactEmail }}</div>
+                    <div class="listingSubItem ">{{ listing.contactPhone }}</div>
+                    <div class="listingSubItem ">{{ listing.fieldAddress }}</div>
+                    <div class="listingSubItem ">{{ listing.sanctioningBody }}</div>
+                    <div class="listingSubItem ">{{ listing.maxTeams }}</div>
+                    <div class="clearfix "></div>
                 </div>
-                <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd;">
-                    <div class="listingSubItem">Additional Fees</div>
-                    <div class="listingSubItem">Games Guaranteed</div>
-                    <div class="listingSubItem">Umpires</div>
-                    <div class="listingSubItem">Time Limit</div>
-                    <div class="listingSubItem">Game Type</div>
-                    <div class="listingSubItem">Start Date</div>
-                    <div class="clearfix"></div>
+                <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd; ">
+                    <div class="listingSubItem ">Additional Fees</div>
+                    <div class="listingSubItem ">Games Guaranteed</div>
+                    <div class="listingSubItem ">Umpires</div>
+                    <div class="listingSubItem ">Time Limit</div>
+                    <div class="listingSubItem ">Game Type</div>
+                    <div class="listingSubItem ">Start Date</div>
+                    <div class="clearfix "></div>
                 </div>
-                <div style="padding: 4px;">
-                    <div class="listingSubItem">{{ listing.fees }}</div>
-                    <div class="listingSubItem">{{ listing.gamesGuar }}</div>
-                    <div class="listingSubItem">{{ listing.umpires }}</div>
-                    <div class="listingSubItem">{{ listing.timeLimit }}</div>
-                    <div class="listingSubItem">{{ listing.gameType }}</div>
-                    <div class="listingSubItem">{{ listing.startDate }}</div>
-                    <div class="clearfix"></div>
+                <div style="padding: 4px; ">
+                    <div class="listingSubItem ">{{ listing.fees }}</div>
+                    <div class="listingSubItem ">{{ listing.gamesGuar }}</div>
+                    <div class="listingSubItem ">{{ listing.umpires }}</div>
+                    <div class="listingSubItem ">{{ listing.timeLimit }}</div>
+                    <div class="listingSubItem ">{{ listing.gameType }}</div>
+                    <div class="listingSubItem ">{{ listing.startDate }}</div>
+                    <div class="clearfix "></div>
                 </div>
-                <div style="padding: 4px; border: 1px #eaeaea solid">
+                <div style="padding: 4px; border: 1px #eaeaea solid ">
                     {{ listing.description }}
                 </div>
             </div>
         </div>
     </div>
-    <div class="alert alert-warning text-center" ng-if="listings.$resolved && !listings.length">
-        No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
+    <div class="alert alert-warning text-center " ng-if="listings.$resolved && !listings.length ">
+        No articles yet, why don't you <a ui-sref="articles.create ">create one</a>?
     </div>
 </section>
