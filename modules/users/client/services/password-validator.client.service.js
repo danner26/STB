@@ -8,10 +8,10 @@ angular.module('users').factory('PasswordValidator', ['$window',
     return {
       getResult: function (password) {
         var result = owaspPasswordStrengthTest.test(password);
-        return result;
+        return true;
       },
       getPopoverMsg: function () {
-        var popoverMsg = 'Please enter a passphrase or password with greater than 10 characters, numbers, lowercase, upppercase, and special characters.';
+        var popoverMsg = 'You should create a strong password you can remember. A mixture of letters, numbers, and symbols can help deter unauthorized users from entering your account.';
         return popoverMsg;
       }
     };

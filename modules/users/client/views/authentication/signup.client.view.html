@@ -1,7 +1,9 @@
 <div ng-controller="AuthenticationController">
-  <h3 class="col-md-12 text-center">Or sign up using your email</h3>
-  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
-    <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off">
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4" style="margin-top: 32px;">
+    <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off" style="background-color: rgba(255, 255, 255, 0.9); padding: 24px;">
+      <span style="font-size: 24pt; font-weight: bold;">Sign Up</span>
+      <br>
+      <br>
       <fieldset>
         <div class="form-group" show-errors>
           <label for="firstName">First Name</label>
@@ -34,17 +36,13 @@
         </div>
         <div class="form-group" show-errors>
           <label for="password">Password</label>
-            <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+            <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" password-validator required>
           <div ng-messages="userForm.password.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Password is required.</p>
             <div ng-repeat="passwordError in passwordErrors">
               <p class="help-block error-text" ng-show="userForm.password.$error.requirements">{{passwordError}}</p>
             </div>
           </div>
-        </div>
-        <div class="form-group" ng-show="!userForm.password.$error.required">
-          <label>Password Requirements</label>
-          <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
         </div>
         <div class="text-center form-group">
           <button type="submit" class="btn btn-primary">Sign up</button>
