@@ -5,7 +5,7 @@ angular.module('listings').run(['Menus',
   function (Menus) {
     // Add the listings dropdown item
     Menus.addMenuItem('topbar', {
-      title: 'Listings',
+      title: 'Event List',
       state: 'listings.list',
       type: 'item',
       roles: ['*']
@@ -13,11 +13,11 @@ angular.module('listings').run(['Menus',
 
     // Add the listings dropdown item
     Menus.addMenuItem('topbar', {
-      title: 'Create Listing',
+      title: 'Create Event',
       state: 'listings.create',
       type: 'item',
       roles: ['*']
     });
-    
+
   }
 ]);
