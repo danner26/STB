@@ -114,12 +114,15 @@
           <label class="col-xs-3 control-label">Age Group</label>
           <div class="col-xs-8">
             <select id="ageGroup" type="button" ng-init="newListingData.ageGroup = 'All Ages'" ng-model="newListingData.ageGroup" class="form-control">
-              <option selected default>All Ages</option>
-              <option> > 8</option>
-              <option> > 10</option>
-              <option> > 12</option>
-              <option> > 14</option>
-              <option> > 16</option>
+              <option selected="selected"> All Age Groups</option>
+              <option>8u</option>
+              <option>10u</option>
+              <option>12u</option>
+              <option>14u</option>
+              <option>16u</option>
+              <option>18u</option>
+              <option>23u</option>
+              <option>Adult</option>
             </select>
           </div>
         </div>
@@ -129,9 +132,12 @@
           <div class="col-xs-8">
             <select type="button" ng-init="newListingData.level = 'All Levels'" ng-model="newListingData.level" class="form-control">
               <option selected="selected">All Levels</option>
-              <option>Level 1</option>
-              <option>Level 2</option>
-              <option>Level 3</option>
+              <option>Level A</option>
+              <option>Level B</option>
+              <option>Level C</option>
+              <option>OPEN</option>
+              <option>Town/Rec</option>
+              <option>Other</option>
             </select>
           </div>
         </div>
