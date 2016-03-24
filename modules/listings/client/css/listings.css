@@ -20,3 +20,8 @@
     width: 19%;
     padding-bottom: 1em;
 }
+.filterTitle {
+  font-weight: bolder;
+  font-size: 1.25em;
+  color: black;
+}
