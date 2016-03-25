@@ -1,226 +1,275 @@
 <section ng-controller="ListingsController" ng-init="find()" style="background-color: rgba(255, 255, 255, 0.4); padding: 24px; margin-top: 24px;">
-    <div>
-        <div style="float:left;" ng-click="listing.collapse = !listing.collapse"> <!-- onclick: hide display until its loaded or prevent default animation -->
-            <button class="btn btn-default btn-xs" style="outline:none;" onclick="filterDropdown(this)" style="font-size: 14px; font-weight: bold;">
-                Show Filters <span class="glyphicon glyphicon-chevron-down" style="padding: 8px 5px; height: 100%;"></span>
-            </button>
-            <span id="activeFilter" style="color: #32cd32; display: none; font-weight: 800; padding-left:2em;">Filter Active</span>
-        </div>
-        <div class="pull-right" style="padding-bottom:1em;">
-            <input type="text" class="form-control" ng-model="search.terms" placeholder="Term Search" />
-        </div>
-        <div class="clearfix"></div>
+  <div>
+    <div style="float:left;" ng-click="listing.collapse = !listing.collapse">
+      <!-- onclick: hide display until its loaded or prevent default animation -->
+      <button class="btn btn-default btn-xs" style="outline:none;" onclick="filterDropdown(this)" style="font-size: 14px; font-weight: bold;">
+        Show Filters <span class="glyphicon glyphicon-chevron-down" style="padding: 8px 5px; height: 100%;"></span>
+      </button>
+      <span id="activeFilter" style="color: #32cd32; display: none; font-weight: 800; padding-left:2em;">Filter Active</span>
     </div>
-    <div collapse="!listing.collapse" id="collapsableBox">
-            <div class="filterRow">
-                <div>
-                    <div class="filterTitle">State</div>
-                    <select id="state" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any State</option>
-                        <option> New Jersey</option>
-                        <option> New York</option>
-                        <option> Pennsylvania</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="filterTitle">Distance from You</div>
-                    <select id="distance" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any Distance</option>
-                        <option> > 25 Miles</option>
-                        <option> > 50 Miles</option>
-                        <option> > 100 miles</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="filterTitle">Age Group</div>
-                    <select id="ageGroup" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> All Age Groups</option>
-                        <option>8u</option>
-                        <option>10u</option>
-                        <option>12u</option>
-                        <option>14u</option>
-                        <option>16u</option>
-                        <option>18u</option>
-                        <option>23u</option>
-                        <option>Adult</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="filterTitle">Level of Play</div>
-                    <select id="levelOfPlay" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> All Levels</option>
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>OPEN</option>
-                        <option>Town/Rec Only</option>
-                        <option>Showcase</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="filterTitle">Number of Umpires</div>
-                    <select id="umpires" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected">Any Umpire Count</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                </div>
-            </div>
+    <div class="pull-right" style="padding-bottom:1em;">
+      <input type="text" class="form-control" ng-model="search.terms" placeholder="Term Search" />
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div collapse="!listing.collapse" id="collapsableBox">
+    <div class="filterRow">
+      <div>
+        <div class="filterTitle">State</div>
+        <select id="state" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option value="AnyState" selected="selected"> Any State</option>
+          <option value="Alaska">Alaska</option>
+          <option value="Alabama">Alabama</option>
+          <option value="Arkansas">Arkansas</option>
+          <option value="Arizona">Arizona</option>
+          <option value="California">California</option>
+          <option value="Colorado">Colorado</option>
+          <option value="Connecticut">Connecticut</option>
+          <option value="Delaware">Delaware</option>
+          <option value="Florida">Florida</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Hawaii">Hawaii</option>
+          <option value="Iowa">Iowa</option>
+          <option value="Idaho">Idaho</option>
+          <option value="Illinois">Illinois</option>
+          <option value="Indiana">Indiana</option>
+          <option value="Kansas">Kansas</option>
+          <option value="Kentucky">Kentucky</option>
+          <option value="Louisiana">Louisiana</option>
+          <option value="Massachusetts">Massachusetts</option>
+          <option value="Maryland">Maryland</option>
+          <option value="Maine">Maine</option>
+          <option value="Michigan">Michigan</option>
+          <option value="Minnesota">Minnesota</option>
+          <option value="Missouri">Missouri</option>
+          <option value="Mississippi">Mississippi</option>
+          <option value="Montana">Montana</option>
+          <option value="North Carolina">North Carolina</option>
+          <option value="North Dakota">North Dakota</option>
+          <option value="Nebraska">Nebraska</option>
+          <option value="New Hampshire">New Hampshire</option>
+          <option value="New Jersey">New Jersey</option>
+          <option value="New Mexico">New Mexico</option>
+          <option value="Nevada">Nevada</option>
+          <option value="New York">New York</option>
+          <option value="Ohio">Ohio</option>
+          <option value="Oklahoma">Oklahoma</option>
+          <option value="Oregon">Oregon</option>
+          <option value="Pennsylvania">Pennsylvania</option>
+          <option value="Puerto Rico">Puerto Rico</option>
+          <option value="Rhode Island">Rhode Island</option>
+          <option value="South Carolina">South Carolina</option>
+          <option value="South Dakota">South Dakota</option>
+          <option value="Tennessee">Tennessee</option>
+          <option value="Texas">Texas</option>
+          <option value="Utah">Utah</option>
+          <option value="Virginia">Virginia</option>
+          <option value="Vermont">Vermont</option>
+          <option value="Washington">Washington</option>
+          <option value="Wisconsin">Wisconsin</option>
+          <option value="West Virginia">West Virginia</option>
+          <option value="Wyoming">Wyoming</option>
+        </select>
+      </div>
+      <div>
+        <div class="filterTitle">Distance from You</div>
+        <select id="distance" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected"> Any Distance</option>
+          <option> > 25 Miles</option>
+          <option> > 50 Miles</option>
+          <option> > 100 miles</option>
+        </select>
+      </div>
+      <div>
+        <div class="filterTitle">Age Group</div>
+        <select id="ageGroup" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected"> All Age Groups</option>
+          <option>8u</option>
+          <option>10u</option>
+          <option>12u</option>
+          <option>14u</option>
+          <option>16u</option>
+          <option>18u</option>
+          <option>23u</option>
+          <option>Adult</option>
+        </select>
+      </div>
+      <div>
+        <div class="filterTitle">Level of Play</div>
+        <select id="levelOfPlay" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected"> All Levels</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>OPEN</option>
+          <option>Town/Rec Only</option>
+          <option>Showcase</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <div class="filterTitle">Number of Umpires</div>
+        <!-- This needs to change to start date filter -->
+        <select id="umpires" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected">Any Umpire Count</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+    </div>
 
-            <div class="filterRow">
-                <div>
-                    <div class="filterTitle">Max Team Limit</div>
-                    <select id="maxTeams" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any Amount</option>
-                        <option> > Limit 1</option>
-                        <option> > Limit 2</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="filterTitle">Additional Fee's (Y/N)</div>
-                    <select id="addFees" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any Additional</option>
-                        <option> Yes</option>
-                        <option> No</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="filterTitle">Games Guaranteed</div>
-                    <select id="gamesGuar" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> Any Amount</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="filterTitle">Time Limit</div>
-                    <select id="timeLimit" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected">All Limits</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="filterTitle">Type of Play</div>
-                    <select id="typeOfPlay" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-                        <option selected="selected"> All Types</option>
-                        <option>Tournament</option>
-                        <option>League</option>
-                        <option>Camp</option>
-                        <option>Tryout</option>
-                    </select>
-                </div>
-            </div>
+    <div class="filterRow">
+      <div>
+        <div class="filterTitle">Max Team Limit</div>
+        <select id="maxTeams" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected"> Any Amount</option>
+          <option> > Limit 1</option>
+          <option> > Limit 2</option>
+        </select>
+      </div>
+      <div>
+        <div class="filterTitle">Additional Fee's (Y/N)</div>
+        <select id="addFees" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected"> Any Additional</option>
+          <option> Yes</option>
+          <option> No</option>
+        </select>
+      </div>
+      <div>
+        <div class="filterTitle">Games Guaranteed</div>
+        <select id="gamesGuar" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected"> Any Amount</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <div class="filterTitle">Time Limit</div>
+        <select id="timeLimit" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected">All Limits</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+      <div>
+        <div class="filterTitle">Type of Listing</div>
+        <select id="typeOfPlay" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+          <option selected="selected"> All Types</option>
+          <option>Tournament</option>
+          <option>League</option>
+          <option>Camp</option>
+          <option>Tryout</option>
+        </select>
+      </div>
     </div>
-    <hr style="width:100%;margin-top:0px;margin-bottom:0.5em;">
+  </div>
+  <hr style="width:100%;margin-top:0px;margin-bottom:0.5em;">
+  </div>
+  <div>
+    <div style="padding: 4px;">
+      <div class="listingSubItem">{{ listing.firstName }} {{ listing.lastName }}</div>
+      <div class="listingSubItem">{{ listing.contactEmail }}</div>
+      <div class="listingSubItem">{{ listing.contactPhone }}</div>
+      <div class="listingSubItem">{{ listing.fieldAddress }}</div>
+      <div class="listingSubItem">{{ listing.sanctioningBody }}</div>
+      <div class="listingSubItem">{{ listing.maxTeams }}</div>
+      <div class="clearfix"></div>
     </div>
-    <div>
+  </div>
+  <div class="list-group" style="word-wrap:break-word;">
+    <div class="list-group-item" style="font-weight: bold; font-size: 16px; background: #eaeaea; border-bottom: 2px solid black;">
+      <div class="sideButton">
+        <span class="glyphicon glyphicon-refresh" style="padding-left:6px;" ng-click="find()"></span>
+      </div>
+      <div class="listingItem">
+        Field State
+      </div>
+      <div class="listingItem">
+        Field City
+      </div>
+      <div class="listingItem">
+        Age Group
+      </div>
+      <div class="listingItem">
+        Level of Play
+      </div>
+      <div class="listingItem">
+        Entry Fee
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div ng-repeat="listing in listings | filter: search.terms" ng-click="listing.collapse = !listing.collapse" class="list-group-item" onclick="modifyTRow(this);">
+      <div class="sideButton">
+        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button>
+      </div>
+      <div class="listingItem">
+        {{ listing.fieldState }}
+      </div>
+      <div class="listingItem">
+        {{ listing.fieldCity }}
+      </div>
+      <div class="listingItem">
+        {{ listing.ageGroup }}
+      </div>
+      <div class="listingItem">
+        {{ listing.level }}
+      </div>
+      <div class="listingItem">
+        {{ listing.entryFee }}
+      </div>
+      <div class="clearfix"></div>
+      <div collapse="!listing.collapse" style="padding-top: 16px;" ng-click="$event.stopPropagation()" id="collapsableBox">
+        <hr style="width:100%;margin-top:0px;margin-bottom:0.5em;">
+        <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd;">
+          <div class="listingSubItem">Contact Name</div>
+          <div class="listingSubItem">Contact Email</div>
+          <div class="listingSubItem">Contact Phone</div>
+          <div class="listingSubItem">Field Address</div>
+          <div class="listingSubItem">Sanctioning Body</div>
+          <div class="listingSubItem">Max Teams</div>
+          <div class="clearfix"></div>
+        </div>
         <div style="padding: 4px;">
-            <div class="listingSubItem">{{ listing.firstName }} {{ listing.lastName }}</div>
-            <div class="listingSubItem">{{ listing.contactEmail }}</div>
-            <div class="listingSubItem">{{ listing.contactPhone }}</div>
-            <div class="listingSubItem">{{ listing.fieldAddress }}</div>
-            <div class="listingSubItem">{{ listing.sanctioningBody }}</div>
-            <div class="listingSubItem">{{ listing.maxTeams }}</div>
-            <div class="clearfix"></div>
+          <div class="listingSubItem">{{ listing.firstName }} {{ listing.lastName }}</div>
+          <div class="listingSubItem">{{ listing.contactEmail }}</div>
+          <div class="listingSubItem">{{ listing.contactPhone }}</div>
+          <div class="listingSubItem">{{ listing.fieldAddress }}</div>
+          <div class="listingSubItem">{{ listing.sanctioningBody }}</div>
+          <div class="listingSubItem">{{ listing.maxTeams }}</div>
+          <div class="clearfix"></div>
         </div>
-    </div>
-    <div class="list-group" style="word-wrap:break-word;">
-        <div class="list-group-item" style="font-weight: bold; font-size: 16px; background: #eaeaea; border-bottom: 2px solid black;">
-            <div class="sideButton">
-                <span class="glyphicon glyphicon-refresh" style="padding-left:6px;" ng-click="find()"></span>
-            </div>
-            <div class="listingItem">
-                Field State
-            </div>
-            <div class="listingItem">
-                Field City
-            </div>
-            <div class="listingItem">
-                Age Group
-            </div>
-            <div class="listingItem">
-                Level of Play
-            </div>
-            <div class="listingItem">
-                Entry Fee
-            </div>
-            <div class="clearfix"></div>
+        <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd;">
+          <div class="listingSubItem">Additional Fees</div>
+          <div class="listingSubItem">Games Guaranteed</div>
+          <div class="listingSubItem">Time Limit</div>
+          <div class="listingSubItem">Event Type</div>
+          <div class="listingSubItem">Start Date</div>
+          <div class="listingSubItem">End Date</div>
+          <div class="clearfix"></div>
         </div>
-
-        <div ng-repeat="listing in listings | filter: search.terms" ng-click="listing.collapse = !listing.collapse" class="list-group-item"
-        onclick="modifyTRow(this);">
-            <div class="sideButton">
-                <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button>
-            </div>
-            <div class="listingItem">
-                {{ listing.fieldState }}
-            </div>
-            <div class="listingItem">
-                {{ listing.fieldCity }}
-            </div>
-            <div class="listingItem">
-                {{ listing.ageGroup }}
-            </div>
-            <div class="listingItem">
-                {{ listing.level }}
-            </div>
-            <div class="listingItem">
-                {{ listing.entryFee }}
-            </div>
-            <div class="clearfix"></div>
-            <div collapse="!listing.collapse" style="padding-top: 16px;" ng-click="$event.stopPropagation()" id="collapsableBox">
-                <hr style="width:100%;margin-top:0px;margin-bottom:0.5em;">
-                <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd;">
-                    <div class="listingSubItem">Contact Name</div>
-                    <div class="listingSubItem">Contact Email</div>
-                    <div class="listingSubItem">Contact Phone</div>
-                    <div class="listingSubItem">Field Address</div>
-                    <div class="listingSubItem">Sanctioning Body</div>
-                    <div class="listingSubItem">Max Teams</div>
-                    <div class="clearfix"></div>
-                </div>
-                <div style="padding: 4px;">
-                    <div class="listingSubItem">{{ listing.firstName }} {{ listing.lastName }}</div>
-                    <div class="listingSubItem">{{ listing.contactEmail }}</div>
-                    <div class="listingSubItem">{{ listing.contactPhone }}</div>
-                    <div class="listingSubItem">{{ listing.fieldAddress }}</div>
-                    <div class="listingSubItem">{{ listing.sanctioningBody }}</div>
-                    <div class="listingSubItem">{{ listing.maxTeams }}</div>
-                    <div class="clearfix"></div>
-                </div>
-                <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd;">
-                    <div class="listingSubItem">Additional Fees</div>
-                    <div class="listingSubItem">Games Guaranteed</div>
-                    <div class="listingSubItem">Umpires</div>
-                    <div class="listingSubItem">Time Limit</div>
-                    <div class="listingSubItem">Game Type</div>
-                    <div class="listingSubItem">Start Date</div>
-                    <div class="clearfix"></div>
-                </div>
-                <div style="padding: 4px;">
-                    <div class="listingSubItem">{{ listing.fees }}</div>
-                    <div class="listingSubItem">{{ listing.gamesGuar }}</div>
-                    <div class="listingSubItem">{{ listing.umpires }}</div>
-                    <div class="listingSubItem">{{ listing.timeLimit }}</div>
-                    <div class="listingSubItem">{{ listing.gameType }}</div>
-                    <div class="listingSubItem">{{ listing.startDate }}</div>
-                    <div class="clearfix"></div>
-                </div>
-                <div style="padding: 4px; border: 1px #eaeaea solid">
-                    {{ listing.description }}
-                </div>
-            </div>
+        <div style="padding: 4px;">
+          <div class="listingSubItem">{{ listing.fees }}</div>
+          <div class="listingSubItem">{{ listing.gamesGuar }}</div>
+          <div class="listingSubItem">{{ listing.timeLimit }}</div>
+          <div class="listingSubItem">{{ listing.gameType }}</div>
+          <div class="listingSubItem">{{ listing.startDate }}</div>
+          <div class="listingSubItem">{{ listing.endDate }}</div>
+          <div class="clearfix"></div>
         </div>
+        <div style="padding: 4px; border: 1px #eaeaea solid">
+          {{ listing.description }}
+        </div>
+      </div>
     </div>
-    <div class="alert alert-warning text-center" ng-if="listings.$resolved && !listings.length">
-        No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
-    </div>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="listings.$resolved && !listings.length">
+    No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
+  </div>
 </section>
