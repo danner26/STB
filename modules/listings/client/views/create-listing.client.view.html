@@ -1,17 +1,10 @@
-<<<<<<< HEAD
 <section ng-controller="ListingsController">
-  <div class="page-header" style="background-color:white;">
-    <h2 style="font-size:2em; padding-top: .5em; text-align: center;">Create Listing</h2>
-  </div>
-  <div class="col-md-12" style="background-color:white; padding-top:1em; ">
-
-=======
-<section ng-controller="ListingsController" >
   <div class="col-md-12" style="background-color: rgba(255, 255, 255, 0.9); padding: 24px; margin-top: 24px;">
-    <span style="font-size: 24pt; font-weight: bold;">Submit Event Listing</span>
+    <div style="width: 100%; text-align: center;">
+      <span style="font-size: 24pt; font-weight: bold;">Submit Event Listing</span>
+    </div>
     <br>
     <br>
->>>>>>> 722d578cfdab63672d69d668723f22fa8017855c
     <div class="container" id="bodyContent">
       <form name="submissionForm" class="form-horizontal" ng-submit="create(submissionForm.$valid)" novalidate>
         <!-- Name -->
@@ -29,7 +22,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Email address</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="email" ng-model="newListingData.contactEmail" placeholder="john.doe@domain.com"/>
+            <input type="text" class="form-control" name="email" ng-model="newListingData.contactEmail" placeholder="john.doe@domain.com" />
           </div>
         </div>
 
@@ -37,7 +30,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Contact Phone</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="phone" ng-model="newListingData.contactPhone" placeholder=""/>
+            <input type="text" class="form-control" name="phone" ng-model="newListingData.contactPhone" placeholder="" />
           </div>
         </div>
 
@@ -105,7 +98,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Field City/Town</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldCity" placeholder="Balltown"/>
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldCity" placeholder="Balltown" />
           </div>
         </div>
 
@@ -113,7 +106,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Field Address</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldAddress" placeholder="123 Field Address, NJ 00123"/>
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldAddress" placeholder="123 Field Address, NJ 00123" />
           </div>
         </div>
 
@@ -146,6 +139,7 @@
               <option>Level C</option>
               <option>OPEN</option>
               <option>Town/Rec</option>
+              <option>Showcase</option>
               <option>Other</option>
             </select>
           </div>
@@ -155,7 +149,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Sanctioning Body</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.sanctioningBody" value="N/A"/>
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.sanctioningBody" value="N/A" />
           </div>
         </div>
 
@@ -163,19 +157,19 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Max Teams</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.maxTeams" placeholder="Max Teams"/>
+            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.maxTeams" placeholder="Max Teams" />
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-xs-3 control-label">Entry Fee</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.entryFee" placeholder="2000.00"/>
+            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.entryFee" placeholder="2000.00" />
           </div>
         </div>
 
         <!-- Additional Fees -->
-        <div class="form-group">
+        <div id="addFee" class="form-group">
           <label class="col-xs-3 control-label">Additional Fees</label>
           <div class="col-xs-8">
             <div class="radio" style="display:inline-block;">
@@ -195,30 +189,22 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Games Guaranteed</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="gamesGuar" ng-model="newListingData.gamesGuar" value="N/A"/>
-          </div>
-        </div>
-
-        <!-- Umpires -->
-        <div class="form-group">
-          <label class="col-xs-3 control-label"># of Umpires</label>
-          <div class="col-xs-8">
-            <input type="text" class="form-control" name="gamesGuar" ng-model="newListingData.umpires" value="N/A"/>
+            <input type="text" class="form-control" name="gamesGuar" ng-model="newListingData.gamesGuar" value="N/A" />
           </div>
         </div>
 
         <!-- Time Limit -->
-        <div class="form-group">
+        <div id="timeLim" class="form-group">
           <label class="col-xs-3 control-label">Time Limit</label>
           <div class="col-xs-8">
             <div class="radio" style="display:inline-block;">
               <label>
-                <input type="radio" name="addFee" ng-model="newListingData.timeLimit" value="yes" /> Yes
+                <input type="radio" name="timeLime" ng-model="newListingData.timeLimit" value="yes" /> Yes
               </label>
             </div>
             <div class="radio" style="display:inline-block; padding-left:2em;">
               <label>
-                <input type="radio" name="addFee" ng-model="newListingData.timeLimit" value="no" /> No
+                <input type="radio" name="timeLim" ng-model="newListingData.timeLimit" value="no" /> No
               </label>
             </div>
           </div>
@@ -226,9 +212,9 @@
 
         <!-- Type -->
         <div class="form-group">
-          <label class="col-xs-3 control-label">Type of Listing</label>
+          <label class="col-xs-3 control-label">Event Type</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.gameType" placeholder="Finals/Tournament/etc.."/>
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.gameType" placeholder="Finals/Tournament/etc.." />
           </div>
         </div>
 
@@ -237,6 +223,14 @@
           <label class="col-xs-3 control-label">Start Date</label>
           <div class="col-xs-8">
             <input type="text" class="form-control" name="startDate" ng-model="newListingData.startDate" placeholder="MM/DD/YYYY" />
+          </div>
+        </div>
+
+        <!-- End Date -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">End Date</label>
+          <div class="col-xs-8">
+            <input type="text" class="form-control" name="endDate" ng-model="newListingData.endDate" placeholder="MM/DD/YYYY" />
           </div>
         </div>
 
@@ -251,7 +245,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label"></label>
           <div class="col-xs-8">
-            <input type="submit" class="btn btn-primary"  value="Submit Listing" />
+            <input type="submit" class="btn btn-primary" value="Submit Listing" />
             <input type="reset" class="btn btn-danger" value="Reset Listing" />
             <div ng-show="error" class="text-danger">
               <strong ng-bind="error"></strong>
@@ -260,6 +254,7 @@
         </div>
       </form>
 
-    </div><!--container-->
+    </div>
+    <!--container-->
   </div>
 </section>

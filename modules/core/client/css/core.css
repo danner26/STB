@@ -4,11 +4,7 @@
 .undecorated-link:hover {
   text-decoration: none;
 }
-[ng\:cloak],
-[ng-cloak],
-[x-ng-cloak],
-.ng-cloak,
-.x-ng-cloak {
+[ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
 .header-profile-image {
@@ -18,8 +14,7 @@
   border-radius: 50%;
   margin-right: 5px;
 }
-.open .header-profile-image,
-a:hover .header-profile-image {
+.open .header-profile-image, a:hover .header-profile-image {
   opacity: 1;
 }
 .user-header-dropdown-toggle {
