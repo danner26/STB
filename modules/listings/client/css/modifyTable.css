@@ -4,18 +4,6 @@
  * DTSU Dev Team (http://devteam.danstechsupport.com)
  */
 
-ul.nav.navbar-nav.ng-scope > li:hover {
-    transition: all 0.3s ease 0s;
-    box-shadow: inset 0 0 0 3px #B30000;
-}
-ul.nav.navbar-nav > li.active {
-    transition: all 0.3s ease 0s;
-    border-bottom: 2px ridge #B30000;
-}
-div.navbar-header:hover {
-    transition: all 0.3s ease 0s;
-    border-bottom: 3px solid #B30000;
-}
 .outline {
     border-left: 2px solid #D12026;
     border-right: 2px solid #D12026;

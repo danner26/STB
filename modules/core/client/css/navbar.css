@@ -1,0 +1,27 @@
+/*!
+ * STB - Modify Table v 1.2.0
+ * Dan's Tech Support Unlimited (http://danstechsupport.com)
+ * DTSU Dev Team (http://devteam.danstechsupport.com)
+ */
+nav > ul.nav.navbar-nav > li.list-item {
+  padding-bottom: 3px;
+}
+nav > ul.nav.navbar-nav.navbar-right > li {
+  padding-bottom: 3px;
+}
+ul.nav.navbar-nav.ng-scope > li:hover {
+  transition: all 0.3s ease 0s;
+  box-shadow: inset 0 -15px 20px -10px #B30000;
+  border-radius: 10px 10px 2px 2px;
+}
+ul.nav.navbar-nav > li.active {
+  transition: all 0.3s ease 0s;
+  box-shadow: inset 0 -15px 20px -10px #B30000;
+  border-radius: 10px 10px 2px 2px;
+}
+a.navbar-brand:hover {
+    transition: all 0.3s ease 0s;
+    box-shadow: inset 0 -15px 20px -10px #B30000;
+    border-radius: 10px 10px 2px 2px;
+    /*border-bottom: 3px solid #B30000;*/
+}
