@@ -3,13 +3,13 @@
 function modifyTRow(o) {
     //timeout for a delay to prevent fast double clicking glitches
   setTimeout(function () {
-    o.classList.toggle('outline'); //toggle row css class 'outline'
+    o.parentElement.parentElement.parentElement.classList.toggle('outline'); //toggle row css class 'outline'
     toggleEye(o); //js function: toggle eye
   }, 50);
 }
 function toggleEye(o) {
   var eye = o.querySelector('span'); //get span that holds the eye
-  if (eye.className === 'glyphicon glyphicon-eye-open') { 
+  if (eye.className === 'glyphicon glyphicon-eye-open') {
     eye.className = 'glyphicon glyphicon-eye-close'; //close eye
   } else {
     eye.className = 'glyphicon glyphicon-eye-open'; //open eye
