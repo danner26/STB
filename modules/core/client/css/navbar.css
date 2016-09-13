@@ -3,7 +3,7 @@
  * Dan's Tech Support Unlimited (http://danstechsupport.com)
  * DTSU Dev Team (http://devteam.danstechsupport.com)
  */
-nav > ul.nav.navbar-nav > li.list-item {
+nav > ul.nav.navbar-nav > li.list-item.ng-scope {
   padding-bottom: 3px;
 }
 nav > ul.nav.navbar-nav.navbar-right > li {

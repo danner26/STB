@@ -11,11 +11,18 @@ angular.module('listings').run(['Menus',
       roles: ['*']
     });
 
+    /*Menus.addMenuItem('topbar', {
+      title: 'Login to Post',
+      state: 'authentication.signup',
+      type: 'item',
+      roles: ['*']
+    });*/
     // Add the listings dropdown item
     Menus.addMenuItem('topbar', {
       title: 'Post Event Listing',
       state: 'listings.create',
       type: 'item',
+      //roles: ['users, admin']
       roles: ['*']
     });
 
