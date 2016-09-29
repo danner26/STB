@@ -6,17 +6,23 @@
     <br>
     <br>
     <div class="container" id="bodyContent">
-      <form name="submissionForm" class="form-horizontal" ng-submit="create(submissionForm.$valid)" novalidate>
+      <form name="submissionForm" class="form-horizontal" ng-submit="create(submissionForm.$valid)">
         <!-- Name -->
         <div class="form-group">
           <label class="col-xs-3 control-label">Full name</label>
           <div class="col-xs-4">
             <input type="text" class="form-control" name="firstName" ng-model="newListingData.firstName" placeholder="First name" ng-required="true"/>
-            <p ng-show="submissionForm.firstName.$invalid && !submissionForm.firstName.$pristine" class="help-block">You name is required.</p>
+            <div ng-messages="submissionForm.firstName.$error">
+                 <div ng-message="required">You did not enter a field</div>
+                 <div ng-message="minlength">The value entered is too short</div>
+            </div>
           </div>
           <div class="col-xs-4">
             <input type="text" class="form-control" name="lastName" ng-model="newListingData.lastName" placeholder="Last name" ng-required="true"/>
-            <p ng-show="submissionForm.lastName.$invalid && !submissionForm.lastName.$pristine" class="help-block">You name is required.</p>
+            <div ng-messages="submissionForm.lastName.$error">
+                 <div ng-message="required">You did not enter a field</div>
+                 <div ng-message="minlength">The value entered is too short</div>
+            </div>
           </div>
         </div>
 
@@ -40,7 +46,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Field State</label>
           <div class="col-xs-8">
-            <select class="form-control" id="state" ng-model="newListingData.fieldState" name="state" name="sate" required>
+            <select class="form-control" ng-model="newListingData.fieldState" name="state" required>
               <option disabled selected value> -- select an option -- </option>
               <option value="Alaska">Alaska</option>
               <option value="Alabama">Alabama</option>
