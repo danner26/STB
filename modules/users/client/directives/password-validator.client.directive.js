@@ -26,10 +26,11 @@ angular.module('users')
 
             scope.requirementsColor = requirementsMeter[requirementsIdx].color;
             scope.requirementsProgress = requirementsMeter[requirementsIdx].progress;
-
-            if (result.errors.length) {
+            
+            if (result.errors && result.errors.length > 0) {
               scope.popoverMsg = PasswordValidator.getPopoverMsg();
               scope.passwordErrors = result.errors;
+              console.log('we are here', scope);
               status = false;
             } else {
               scope.popoverMsg = '';

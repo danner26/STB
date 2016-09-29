@@ -13,6 +13,10 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
       $location.path('/');
     }
 
+    $scope.$watch('userForm', function(n, o) {
+      $scope.$broadcast('show-errors-check-validity', 'userForm');
+    })
+
     $scope.signup = function (isValid) {
       $scope.error = null;
 

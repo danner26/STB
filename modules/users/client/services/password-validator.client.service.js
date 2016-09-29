@@ -8,7 +8,7 @@ angular.module('users').factory('PasswordValidator', ['$window',
     return {
       getResult: function (password) {
         var result = owaspPasswordStrengthTest.test(password);
-        return true;
+        return result;
       },
       getPopoverMsg: function () {
         var popoverMsg = 'You should create a strong password you can remember. A mixture of letters, numbers, and symbols can help deter unauthorized users from entering your account.';
