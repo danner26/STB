@@ -20,7 +20,7 @@ angular.module('users')
               { color: 'success', progress: '100' }
             ];
 
-            if (result.errors.length < requirementsMeter.length) {
+            if (result.errors && result.errors.length < requirementsMeter.length) {
               requirementsIdx = requirementsMeter.length - result.errors.length - 1;
             }
 
