@@ -184,7 +184,7 @@
   </div>
   <div class="list-group" style="word-wrap:break-word;">
     <div class="list-group-item" style="font-weight: bold; font-size: 16px; background: #eaeaea; border-bottom: 2px solid black;">
-      <div class="sideButton">
+      <div class="sideButton" id="refreshButton">
         <span class="glyphicon glyphicon-refresh" style="padding-left:6px;" ng-click="find()"></span>
       </div>
       <div class="listingItem">
@@ -206,10 +206,11 @@
     </div>
 
     <div ng-repeat="listing in listings | filter: search.terms"  class="list-group-item">
-      <div class="sideButton">
-        <div style="width: inherit; display: inline; ">
+      <div class="sideButton" style=" padding-right: 15px;">
+        <div style="width: inherit; display: inline;">
           <button class="btn btn-default btn-xs" ng-click="listing.collapse = !listing.collapse" onclick="modifyTRow(this);"><span class="glyphicon glyphicon-eye-open"></span></button>
           <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span></button>
+          <button class="btn btn-default btn-xs" onclick="runUpdate2();"><span class="glyphicon glyphicon-folder-open"></span></button>
         </div>
       </div>
       <div class="listingItem">

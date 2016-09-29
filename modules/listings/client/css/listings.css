@@ -1,5 +1,5 @@
 .sideButton {
-  width: 8%;
+  width: 10%;
   float: left;
 }
 .listingItem {
@@ -14,7 +14,7 @@
   width: 100%;
   display: inline-block;
 }
-.filterRow > div {
+.filterRow>div {
   display: inline-block;
   width: 19%;
   padding-bottom: 1em;

@@ -2,16 +2,14 @@ body {
   background-image: url("/img/home/background.jpeg");
   background-size: cover;
 }
-#infoBox {
+.infoBox {
   background-color: black;
   z-index: 0;
+  background: #000;
   background: rgba(0, 0, 0, 0.5);
 }
 .cover {
-  padding-left: 15%;
-  padding-right: 15%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding: 2% 15% 2% 15%;
 }
 .underline-color {
   color: #B30000;

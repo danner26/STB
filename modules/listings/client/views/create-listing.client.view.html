@@ -11,10 +11,12 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Full name</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="firstName" ng-model="newListingData.firstName" placeholder="First name" />
+            <input type="text" class="form-control" name="firstName" ng-model="newListingData.firstName" placeholder="First name" ng-required="true"/>
+            <p ng-show="submissionForm.firstName.$invalid && !submissionForm.firstName.$pristine" class="help-block">You name is required.</p>
           </div>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="lastName" ng-model="newListingData.lastName" placeholder="Last name" />
+            <input type="text" class="form-control" name="lastName" ng-model="newListingData.lastName" placeholder="Last name" ng-required="true"/>
+            <p ng-show="submissionForm.lastName.$invalid && !submissionForm.lastName.$pristine" class="help-block">You name is required.</p>
           </div>
         </div>
 
@@ -22,7 +24,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Email address</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="email" ng-model="newListingData.contactEmail" placeholder="john.doe@domain.com" />
+            <input type="text" class="form-control" name="email" ng-model="newListingData.contactEmail" placeholder="john.doe@domain.com" ng-required="true"/>
           </div>
         </div>
 
@@ -30,7 +32,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Contact Phone</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="phone" ng-model="newListingData.contactPhone" placeholder="" />
+            <input type="text" class="form-control" name="phone" ng-model="newListingData.contactPhone" placeholder="" ng-required="true"/>
           </div>
         </div>
 
@@ -38,7 +40,8 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Field State</label>
           <div class="col-xs-8">
-            <select class="form-control" id="state" ng-model="newListingData.fieldState" name="state">
+            <select class="form-control" id="state" ng-model="newListingData.fieldState" name="state" name="sate" required>
+              <option disabled selected value> -- select an option -- </option>
               <option value="Alaska">Alaska</option>
               <option value="Alabama">Alabama</option>
               <option value="Arkansas">Arkansas</option>
@@ -92,13 +95,14 @@
               <option value="Wyoming">Wyoming</option>
             </select>
           </div>
+          <span></span>
         </div>
 
         <!-- Address -->
         <div class="form-group">
           <label class="col-xs-3 control-label">Field City/Town</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldCity" placeholder="Balltown" />
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldCity" placeholder="Balltown" ng-required="true"/>
           </div>
         </div>
 
@@ -106,7 +110,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Field Address</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldAddress" placeholder="123 Field Address, NJ 00123" />
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.fieldAddress" placeholder="123 Field Address, NJ 00123" ng-required="true"/>
           </div>
         </div>
 
@@ -115,8 +119,9 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Age Group</label>
           <div class="col-xs-8">
-            <select id="ageGroup" type="button" ng-init="newListingData.ageGroup = 'All Ages'" ng-model="newListingData.ageGroup" class="form-control">
-              <option selected="selected"> All Age Groups</option>
+            <select id="ageGroup" type="button" ng-model="newListingData.ageGroup" class="form-control" ng-required="true">
+              <option disabled selected value> -- select an option -- </option>
+              <option> All Age Groups</option>
               <option>8u</option>
               <option>10u</option>
               <option>12u</option>
@@ -132,8 +137,9 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Level of Play</label>
           <div class="col-xs-8">
-            <select type="button" ng-init="newListingData.level = 'All Levels'" ng-model="newListingData.level" class="form-control">
-              <option selected="selected">All Levels</option>
+            <select type="button" ng-model="newListingData.level" class="form-control" ng-required="true">
+              <option disabled selected value> -- select an option -- </option>
+              <option>All Levels</option>
               <option>Level A</option>
               <option>Level B</option>
               <option>Level C</option>
@@ -149,7 +155,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Sanctioning Body</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.sanctioningBody" value="N/A" />
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.sanctioningBody" value="N/A" ng-required="true"/>
           </div>
         </div>
 
@@ -157,14 +163,14 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Max Teams</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.maxTeams" placeholder="Max Teams" />
+            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.maxTeams" placeholder="Max Teams" ng-required="true"/>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-xs-3 control-label">Entry Fee</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.entryFee" placeholder="2000.00" />
+            <input type="text" class="form-control" name="maxTeams" ng-model="newListingData.entryFee" placeholder="2000.00" ng-required="true"/>
           </div>
         </div>
 
@@ -174,12 +180,12 @@
           <div class="col-xs-8">
             <div class="radio" style="display:inline-block;">
               <label>
-                <input type="radio" name="addFee" ng-model="newListingData.fees" value="yes" /> Yes
+                <input type="radio" name="addFee" ng-model="newListingData.fees" value="yes" ng-required="true"/> Yes
               </label>
             </div>
             <div class="radio" style="display:inline-block; padding-left:2em;">
               <label>
-                <input type="radio" name="addFee" ng-model="newListingData.fees" value="no" /> No
+                <input type="radio" name="addFee" ng-model="newListingData.fees" value="no" ng-required="true"/> No
               </label>
             </div>
           </div>
@@ -189,7 +195,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Games Guaranteed</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="gamesGuar" ng-model="newListingData.gamesGuar" value="N/A" />
+            <input type="text" class="form-control" name="gamesGuar" ng-model="newListingData.gamesGuar" value="N/A" ng-required="true"/>
           </div>
         </div>
 
@@ -199,12 +205,12 @@
           <div class="col-xs-8">
             <div class="radio" style="display:inline-block;">
               <label>
-                <input type="radio" name="timeLime" ng-model="newListingData.timeLimit" value="yes" /> Yes
+                <input type="radio" name="timeLime" ng-model="newListingData.timeLimit" value="yes" ng-required="true"/> Yes
               </label>
             </div>
             <div class="radio" style="display:inline-block; padding-left:2em;">
               <label>
-                <input type="radio" name="timeLim" ng-model="newListingData.timeLimit" value="no" /> No
+                <input type="radio" name="timeLim" ng-model="newListingData.timeLimit" value="no" ng-required="true"/> No
               </label>
             </div>
           </div>
@@ -214,7 +220,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Event Type</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.gameType" placeholder="Finals/Tournament/etc.." />
+            <input type="text" class="form-control" name="notEmpty" ng-model="newListingData.gameType" placeholder="Finals/Tournament/etc.." ng-required="true"/>
           </div>
         </div>
 
@@ -222,7 +228,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Start Date</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="startDate" ng-model="newListingData.startDate" placeholder="MM/DD/YYYY" />
+            <input type="text" class="form-control" name="startDate" ng-model="newListingData.startDate" placeholder="MM/DD/YYYY" ng-required="true"/>
           </div>
         </div>
 
@@ -230,7 +236,7 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">End Date</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" name="endDate" ng-model="newListingData.endDate" placeholder="MM/DD/YYYY" />
+            <input type="text" class="form-control" name="endDate" ng-model="newListingData.endDate" placeholder="MM/DD/YYYY" ng-required="true"/>
           </div>
         </div>
 
@@ -238,14 +244,14 @@
         <div class="form-group">
           <label class="col-xs-3 control-label">Additional Details/Comments</label>
           <div class="col-xs-8">
-            <textarea name="notEmpty" class="form-control" ng-model="newListingData.description" placeholder="Any Additional Comments/Details here" style="height: 10em;"></textarea>
+            <textarea name="notEmpty" class="form-control" ng-model="newListingData.description" placeholder="Any Additional Comments/Details here" style="height: 10em;" ng-required="true"></textarea>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-xs-3 control-label"></label>
           <div class="col-xs-8">
-            <input type="submit" class="btn btn-primary" value="Submit Listing" />
+            <input type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" value="Submit Listing" />
             <input type="reset" class="btn btn-danger" value="Reset Listing" />
             <div ng-show="error" class="text-danger">
               <strong ng-bind="error"></strong>

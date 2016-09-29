@@ -2,6 +2,110 @@
   <div class="page-header">
     <h1 ng-bind="article.title"></h1>
   </div>
+
+  <div>
+    <div style="padding: 4px;">
+      <div class="listingSubItem">{{ listing.firstName }} {{ listing.lastName }}</div>
+      <div class="listingSubItem">{{ listing.contactEmail }}</div>
+      <div class="listingSubItem">{{ listing.contactPhone }}</div>
+      <div class="listingSubItem">{{ listing.fieldAddress }}</div>
+      <div class="listingSubItem">{{ listing.sanctioningBody }}</div>
+      <div class="listingSubItem">{{ listing.maxTeams }}</div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="list-group" style="word-wrap:break-word;">
+    <div class="list-group-item" style="font-weight: bold; font-size: 16px; background: #eaeaea; border-bottom: 2px solid black;">
+      <div class="sideButton">
+        <span class="glyphicon glyphicon-refresh" style="padding-left:6px;" ng-click="find()"></span>
+      </div>
+      <div class="listingItem">
+        Field State
+      </div>
+      <div class="listingItem">
+        Field City
+      </div>
+      <div class="listingItem">
+        Age Group
+      </div>
+      <div class="listingItem">
+        Level of Play
+      </div>
+      <div class="listingItem">
+        Entry Fee
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div ng-repeat="listing in listings | filter: search.terms"  class="list-group-item">
+      <div class="sideButton">
+        <div style="width: inherit; display: inline; ">
+          <button class="btn btn-default btn-xs" ng-click="listing.collapse = !listing.collapse" onclick="modifyTRow(this);"><span class="glyphicon glyphicon-eye-open"></span></button>
+          <button class="btn btn-default btn-xs" ng-if="menu.shouldRender(authentication.user);"><span class="glyphicon glyphicon-edit"></span></button>
+          <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-folder-open"></span></button>
+        </div>
+      </div>
+      <div class="listingItem">
+        {{ listing.fieldState }}
+      </div>
+      <div class="listingItem">
+        {{ listing.fieldCity }}
+      </div>
+      <div class="listingItem">
+        {{ listing.ageGroup }}
+      </div>
+      <div class="listingItem">
+        {{ listing.level }}
+      </div>
+      <div class="listingItem">
+        {{ listing.entryFee }}
+      </div>
+      <div class="clearfix"></div>
+      <div collapse="!listing.collapse" style="padding-top: 16px;" ng-click="$event.stopPropagation()" id="collapsableBox">
+        <hr style="width:100%;margin-top:0px;margin-bottom:0.5em;">
+        <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd;">
+          <div class="listingSubItem">Contact Name</div>
+          <div class="listingSubItem">Contact Email</div>
+          <div class="listingSubItem">Contact Phone</div>
+          <div class="listingSubItem">Field Address</div>
+          <div class="listingSubItem">Sanctioning Body</div>
+          <div class="listingSubItem">Max Teams</div>
+          <div class="clearfix"></div>
+        </div>
+        <div style="padding: 4px;">
+          <div class="listingSubItem">{{ listing.firstName }} {{ listing.lastName }}</div>
+          <div class="listingSubItem">{{ listing.contactEmail }}</div>
+          <div class="listingSubItem">{{ listing.contactPhone }}</div>
+          <div class="listingSubItem">{{ listing.fieldAddress }}</div>
+          <div class="listingSubItem">{{ listing.sanctioningBody }}</div>
+          <div class="listingSubItem">{{ listing.maxTeams }}</div>
+          <div class="clearfix"></div>
+        </div>
+        <div style="font-weight: bold; padding: 8px; background: #eaeaea; border-bottom: 2px solid #ddd;">
+          <div class="listingSubItem">Additional Fees</div>
+          <div class="listingSubItem">Games Guaranteed</div>
+          <div class="listingSubItem">Time Limit</div>
+          <div class="listingSubItem">Event Type</div>
+          <div class="listingSubItem">Start Date</div>
+          <div class="listingSubItem">End Date</div>
+          <div class="clearfix"></div>
+        </div>
+        <div style="padding: 4px;">
+          <div class="listingSubItem">{{ listing.fees }}</div>
+          <div class="listingSubItem">{{ listing.gamesGuar }}</div>
+          <div class="listingSubItem">{{ listing.timeLimit }}</div>
+          <div class="listingSubItem">{{ listing.gameType }}</div>
+          <div class="listingSubItem">{{ listing.startDate }}</div>
+          <div class="listingSubItem">{{ listing.endDate }}</div>
+          <div class="clearfix"></div>
+        </div>
+        <div style="padding: 4px; border: 1px #eaeaea solid">
+          {{ listing.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="pull-right" ng-show="authentication.user._id == article.user._id">
     <a class="btn btn-primary" ui-sref="articles.edit({articleId: article._id})">
       <i class="glyphicon glyphicon-edit"></i>

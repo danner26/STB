@@ -1,12 +1,13 @@
 'use strict';
 
 function modifyTRow(o) {
-    //timeout for a delay to prevent fast double clicking glitches
-  setTimeout(function () {
+  //timeout for a delay to prevent fast double clicking glitches
+  setTimeout(function() {
     o.parentElement.parentElement.parentElement.classList.toggle('outline'); //toggle row css class 'outline'
     toggleEye(o); //js function: toggle eye
   }, 50);
 }
+
 function toggleEye(o) {
   var eye = o.querySelector('span'); //get span that holds the eye
   if (eye.className === 'glyphicon glyphicon-eye-open') {
@@ -15,6 +16,7 @@ function toggleEye(o) {
     eye.className = 'glyphicon glyphicon-eye-open'; //open eye
   }
 }
+
 function filterDropdown(o) {
   var arrow = o.querySelector('span'); //get span that holds the arrow
   if (arrow.className === ('glyphicon glyphicon-chevron-down')) {
@@ -25,6 +27,7 @@ function filterDropdown(o) {
     checkToggle();
   }
 }
+
 function checkToggle(o) {
   var active = false;
   var state = document.getElementById('state');
@@ -41,7 +44,7 @@ function checkToggle(o) {
 
   for (var i = 0; i < filters.length; i++) {
     if (!active) {
-      if(!filters[i].options[filters[i].selectedIndex].defaultSelected) {
+      if (!filters[i].options[filters[i].selectedIndex].defaultSelected) {
         active = true;
       }
     }
