@@ -1,6 +1,6 @@
 /* globals define */
 (function (root, factory) {
-  
+
   if (typeof define === 'function' && define.amd) {
     define([], factory);
   } else if (typeof exports === 'object') {
@@ -18,7 +18,7 @@
     owasp.configs = {
       allowPassphrases       : true,
       maxLength              : 128,
-      minLength              : 10,
+      minLength              : 8,
       minPhraseLength        : 20,
       minOptionalTestsToPass : 4,
     };
@@ -95,11 +95,11 @@
         },
 
         // require at least one special character
-        function(password) {
+        /*function(password) {
           if (!/[^A-Za-z0-9]/.test(password)) {
             return 'The password must contain at least one special character.';
           }
-        },
+        },*/
 
       ],
     };

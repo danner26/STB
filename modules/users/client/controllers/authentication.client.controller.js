@@ -15,7 +15,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
 
     $scope.$watch('userForm', function(n, o) {
       $scope.$broadcast('show-errors-check-validity', 'userForm');
-    })
+    });
 
     $scope.signup = function (isValid) {
       $scope.error = null;

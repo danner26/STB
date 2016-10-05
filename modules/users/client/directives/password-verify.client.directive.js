@@ -17,7 +17,7 @@ angular.module('users')
           return combined;
         }, function(value) {
           if (value) {
-            ngModel.$validators.passwordVerify = function (password) {
+            ngModel.$validators.passwordVerify = function(password) {
               var origin = scope.passwordVerify;
               return (origin !== password) ? false : true;
             };
