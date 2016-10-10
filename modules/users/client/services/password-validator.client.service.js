@@ -11,7 +11,7 @@ angular.module('users').factory('PasswordValidator', ['$window',
         return result;
       },
       getPopoverMsg: function () {
-        var popoverMsg = 'You should create a strong password you can remember. A mixture of letters, numbers, and symbols can help deter unauthorized users from entering your account.';
+        var popoverMsg = 'You should create a strong password you can remember. A mixture of upper and lowercase letters and numbers can help deter unauthorized users from entering your account.';
         return popoverMsg;
       }
     };
