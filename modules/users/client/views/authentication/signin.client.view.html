@@ -1,27 +1,33 @@
 <div ng-controller="AuthenticationController">
-  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4" style="background-color: rgba(255, 255, 255, 0.9); padding: 24px; margin-top: 24px;">
-    <span style="font-size: 24pt; font-weight: bold;">Sign In</span>
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4" style="background-color: rgba(255, 255, 255, 0.9); padding: 24px; margin-top: 3em; margin-bottom: 3em;">
+    <div style="width: 100%; text-align: center;"><span style="font-size: 24pt; font-weight: bold;">Sign In</span></div>
     <br>
     <br>
     <form name="userForm" ng-submit="signin(userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
           <label for="username">Username</label>
-          <input type="text" id="username" name="username" class="form-control" ng-model="credentials.username" placeholder="Username" lowercase required>
+          <input type="text" id="username" name="username" class="form-control" ng-model="credentials.username" placeholder="Username" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="5" lowercase required>
           <div ng-messages="userForm.username.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Username is required.</p>
+            <div ng-show="userForm.username.$dirty">
+              <p class="help-block error-text" ng-message="required">Username is required.</p>
+            </div>
+            <p class="help-block error-text" ng-message="pattern">Username contains invalid symbols.</p>
+            <p class="help-block error-text" ng-message="minlength">Username must be at least 5 characters long.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" required>
+          <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" ng-minlength="8" required>
           <div ng-messages="userForm.password.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Password is required.</p>
+            <div ng-show="userForm.password.$dirty">
+              <p class="help-block error-text" ng-message="required">Password is required.</p>
+            </div>
+            <p class="help-block error-text" ng-message="minlength">Password must be at least 8 characters long.</p>
           </div>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Sign in</button>
-          &nbsp; or&nbsp;
+          <button type="submit" class="btn btn-primary">Sign in</button> &nbsp; or&nbsp;
           <a ui-sref="authentication.signup">Sign up</a>
         </div>
         <div class="text-center forgot-password">
