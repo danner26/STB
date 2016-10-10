@@ -49,31 +49,31 @@ angular.module('users')
 
           if (password !== undefined) {
             if (password.length === 0) {
-              scope.requirementsProgress = "0";
+              scope.requirementsProgress = '0';
             }
           } else {
-            scope.requirementsProgress = "0";
+            scope.requirementsProgress = '0';
           }
 
-          document.getElementById('progressDivInside').style.width = "" + scope.requirementsProgress + "%";
+          document.getElementById('progressDivInside').style.width = '' + scope.requirementsProgress + '%';
           switch (scope.requirementsProgress) { //outline border of #password
-            case "20":
-              document.getElementById('progressDivInside').style.backgroundColor = "red";
+            case '20':
+              document.getElementById('progressDivInside').style.backgroundColor = 'red';
               break;
-            case "40":
-              document.getElementById('progressDivInside').style.backgroundColor = "orange";
+            case '40':
+              document.getElementById('progressDivInside').style.backgroundColor = 'orange';
               break;
-            case "60":
-              document.getElementById('progressDivInside').style.backgroundColor = "yellow";
+            case '60':
+              document.getElementById('progressDivInside').style.backgroundColor = 'yellow';
               break;
-            case "80":
-              document.getElementById('progressDivInside').style.backgroundColor = "blue";
+            case '80':
+              document.getElementById('progressDivInside').style.backgroundColor = 'blue';
               break;
-            case "100":
-              document.getElementById('progressDivInside').style.backgroundColor = "green";
+            case '100':
+              document.getElementById('progressDivInside').style.backgroundColor = 'green';
               break;
             default:
-              document.getElementById('progressDivInside').style.backgroundColor = "white";
+              document.getElementById('progressDivInside').style.backgroundColor = 'white';
               break;
           }
           return status;
