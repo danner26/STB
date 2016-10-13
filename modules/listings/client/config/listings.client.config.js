@@ -2,7 +2,7 @@
 
 // Configuring the Articles module
 angular.module('listings').run(['Menus',
-  function (Menus) {
+  function(Menus) {
     // Add the listings dropdown item
     Menus.addMenuItem('topbar', {
       title: 'Event Listings',
