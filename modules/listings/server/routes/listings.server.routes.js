@@ -6,7 +6,7 @@
 var articlesPolicy = require('../policies/listings.server.policy'),
   articles = require('../controllers/listings.server.controller');
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Articles collection routes
   app.route('/api/listings').all(articlesPolicy.isAllowed)
     .get(articles.list)

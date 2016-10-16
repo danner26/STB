@@ -113,4 +113,3 @@ fixes #198
   * change travis scripts to work with the component-publisher system ([12d97d3b](http://github.com/angular-ui/ui-utils/commit/12d97d3bf88da86875141093fc164f1537d0dfe2))
   * add and config component-publisher system ([4cea7ea5](http://github.com/angular-ui/ui-utils/commit/4cea7ea5bb4c47ad74c4f5123121a2896bf6f717))
 * **travis:** add sub component auto publishing :) ([0d64db00](http://github.com/angular-ui/ui-utils/commit/0d64db00a5c50816cbf0b022aa5607fee29d5e2a))
-

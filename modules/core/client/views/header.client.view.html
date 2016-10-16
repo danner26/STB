@@ -7,13 +7,14 @@
       <span class="icon-bar"></span>
     </button>
     <a ui-sref="home" class="navbar-brand" style="line-height: 24px; height: 100%; padding: 4px; width: inherit;">
-        <span style=" display: block;margin-top: 0px; height: 50%;">Tournament FastPitch</span>
-        <span style=" display: block;text-align: left; color: gold; margin-top: 0px; float: left;margin-top: 0px; font-size: small;">Where the Game Is</span>
+      <span style=" display: block;margin-top: 0px; height: 50%;">Tournament FastPitch</span>
+      <span style=" display: block;text-align: left; color: gold; margin-top: 0px; float: left;margin-top: 0px; font-size: small;">Where the Game Is</span>
     </a>
   </div>
   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
     <ul class="nav navbar-nav" ng-if="menu.shouldRender(authentication.user);">
-      <li class="list-item" ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}" dropdown="item.type === 'dropdown'">
+      <li class="list-item" ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}"
+          dropdown="item.type === 'dropdown'">
         <a ng-switch-when="dropdown" class="dropdown-toggle" dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
         <ul ng-switch-when="dropdown" class="dropdown-menu">
           <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(authentication.user);" ui-sref-active="active">

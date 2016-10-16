@@ -11,7 +11,7 @@ var cfMongoUrl = (function() {
   }
 }());
 
-var getCred = function (serviceName, credProp) {
+var getCred = function(serviceName, credProp) {
   return appEnv.getService(serviceName) ?
     appEnv.getService(serviceName).credentials[credProp] : undefined;
 };

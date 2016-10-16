@@ -18,21 +18,21 @@
 //    <script src="build/angular-ui-ieshiv.js"></script>
 // <![endif]-->
 
-(function (window, document) {
+(function(window, document) {
   "use strict";
 
-  var tags = [ "ngInclude", "ngPluralize", "ngView", "ngSwitch", "uiCurrency", "uiCodemirror", "uiDate", "uiEvent",
-                "uiKeypress", "uiKeyup", "uiKeydown", "uiMask", "uiMapInfoWindow", "uiMapMarker", "uiMapPolyline",
-                "uiMapPolygon", "uiMapRectangle", "uiMapCircle", "uiMapGroundOverlay", "uiModal", "uiReset",
-                "uiScrollfix", "uiSelect2", "uiShow", "uiHide", "uiToggle", "uiSortable", "uiTinymce"
-                ];
+  var tags = ["ngInclude", "ngPluralize", "ngView", "ngSwitch", "uiCurrency", "uiCodemirror", "uiDate", "uiEvent",
+    "uiKeypress", "uiKeyup", "uiKeydown", "uiMask", "uiMapInfoWindow", "uiMapMarker", "uiMapPolyline",
+    "uiMapPolygon", "uiMapRectangle", "uiMapCircle", "uiMapGroundOverlay", "uiModal", "uiReset",
+    "uiScrollfix", "uiSelect2", "uiShow", "uiHide", "uiToggle", "uiSortable", "uiTinymce"
+  ];
 
-  window.myCustomTags =  window.myCustomTags || []; // externally defined by developer using angular-ui directives
+  window.myCustomTags = window.myCustomTags || []; // externally defined by developer using angular-ui directives
   tags.push.apply(tags, window.myCustomTags);
 
-  var toCustomElements = function (str) {
+  var toCustomElements = function(str) {
     var result = [];
-    var dashed = str.replace(/([A-Z])/g, function ($1) {
+    var dashed = str.replace(/([A-Z])/g, function($1) {
       return " " + $1.toLowerCase();
     });
     var tokens = dashed.split(" ");

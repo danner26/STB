@@ -1,4 +1,5 @@
-﻿'use strict';
+﻿
+'use strict';
 
 var _ = require('lodash'),
   config = require('../config'),
@@ -23,7 +24,7 @@ module.exports = logger;
  *
  * Returns the log.format option set in the current environment configuration
  */
-function getLogFormat () {
+function getLogFormat() {
   var format = config.log && config.log.format ? config.log.format.toString() : 'combined';
 
   // make sure we have a valid format
@@ -46,7 +47,7 @@ function getLogFormat () {
  * Returns the log.options object set in the current environment configuration.
  * NOTE: Any options, requiring special handling (e.g. 'stream'), that encounter an error will be removed from the options.
  */
-function getLogOptions () {
+function getLogOptions() {
   var options = config.log && config.log.options ? _.clone(config.log.options, true) : {};
 
   // check if the current environment config has the log stream option set
@@ -85,7 +86,9 @@ function getLogOptions () {
             fs.mkdirSync(options.stream.directoryPath);
           }
 
-          options.stream = fs.createWriteStream(options.stream.directoryPath + '/' + config.log.options.stream.fileName, { flags: 'a' });
+          options.stream = fs.createWriteStream(options.stream.directoryPath + '/' + config.log.options.stream.fileName, {
+            flags: 'a'
+          });
         } else {
           // throw a new error so we can catch and handle it gracefully
           throw new Error('An invalid fileName or directoryPath was provided for stream option.');

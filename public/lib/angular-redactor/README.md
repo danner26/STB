@@ -43,7 +43,7 @@ Global Options
 ```js
 angular.module('app', ['angular-redactor'])
   .config(function(redactorOptions) {
-    redactorOptions.buttons = ['formatting', '|', 'bold', 'italic']; 
+    redactorOptions.buttons = ['formatting', '|', 'bold', 'italic'];
   });
 ```
 

@@ -37,7 +37,7 @@
       <div class="clearfix"></div>
     </div>
 
-    <div ng-repeat="listing in listings | filter: search.terms"  class="list-group-item">
+    <div ng-repeat="listing in listings | filter: search.terms" class="list-group-item">
       <div class="sideButton">
         <div style="width: inherit; display: inline; ">
           <button class="btn btn-default btn-xs" ng-click="listing.collapse = !listing.collapse" onclick="modifyTRow(this);"><span class="glyphicon glyphicon-eye-open"></span></button>
