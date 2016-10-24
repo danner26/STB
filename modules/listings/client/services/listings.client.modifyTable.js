@@ -2,7 +2,7 @@
 
 function modifyTRow(o) {
   //timeout for a delay to prevent fast double clicking glitches
-  setTimeout(function() {
+  setTimeout(function () {
     o.parentElement.parentElement.parentElement.classList.toggle('outline'); //toggle row css class 'outline'
     toggleEye(o); //js function: toggle eye
   }, 50);
@@ -20,16 +20,37 @@ function toggleEye(o) {
 function filterDropdown(o) {
   var arrow = o.querySelector('span'); //get span that holds the arrow
   if (arrow.className === ('glyphicon glyphicon-chevron-down')) {
+    showHideFilters('show');
     arrow.className = 'glyphicon glyphicon-chevron-up'; //arrow up
     checkToggle();
   } else {
+    showHideFilters('hide');
     arrow.className = 'glyphicon glyphicon-chevron-down'; //arrow down
     checkToggle();
   }
 }
 
+function showHideFilters(action) {
+  var rows = document.getElementsByClassName('filterRow');
+  switch (action) {
+  case 'show':
+    for (var i = 0; i < rows.length; i++) {
+      rows[i].classList.remove('hide');
+      rows[i].classList.add('show');
+    }
+    break;
+  case 'hide':
+    for (var j = 0; j < rows.length; j++) {
+      rows[j].classList.remove('show');
+      rows[j].classList.add('hide');
+    }
+    break;
+  }
+}
+
 function checkToggle(o) {
   var active = false;
+  var filter = document.getElementsByClassName('activeFilter');
   var state = document.getElementById('state');
   var dist = document.getElementById('distance');
   var age = document.getElementById('ageGroup');
@@ -51,8 +72,10 @@ function checkToggle(o) {
   }
   var activeFilter = document.getElementById('activeFilter');
   if (active) {
-    activeFilter.style.display = 'inline';
+    activeFilter.style.display = 'inline-block';
+    filter[0].style.display = "inline-block";
   } else {
     activeFilter.style.display = 'none';
+    filter[0].style.display = "none";
   }
 }

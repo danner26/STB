@@ -1,3 +1,25 @@
+.searchBox {
+  width: 100%;
+  float: right;
+  transition: width 2s;
+}
+.searchBox:focus {
+  width: 200%;
+  transition: width 2s;
+}
+div.filterRow.show {
+  display: block;
+}
+div.filterRow.hide {
+  display: none;
+}
+.activeFilter {
+  background-color: black;
+  z-index: 0;
+  background: #000;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 2em;
+}
 .sideButton {
   width: 10%;
   float: left;

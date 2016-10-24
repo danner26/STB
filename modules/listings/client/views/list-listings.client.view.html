@@ -1,20 +1,22 @@
 <section ng-controller="ListingsController" ng-init="find()" style="background-color: rgba(255, 255, 255, 0.4); padding: 24px; margin-top: 24px;">
-  <div>
+  <div style="display: block; height: 32px;">
     <div style="float:left;" ng-click="listing.collapse = !listing.collapse">
       <!-- onclick: hide display until its loaded or prevent default animation -->
-      <button class="btn btn-default btn-xs" style="outline:none;" onclick="filterDropdown(this)" style="font-size: 14px; font-weight: bold;">
+      <button class="btn btn-default btn-xs" onclick="filterDropdown(this)" style="outline:none;  margin-right:2em; font-size: 14px; font-weight: bold;">
         Show Filters <span class="glyphicon glyphicon-chevron-down" style="padding: 8px 5px; height: 100%;"></span>
       </button>
-      <span id="activeFilter" style="color: #32cd32; display: none; font-weight: 800; padding-left:2em;">Filter Active</span>
+      <div class="activeFilter" style="display: none; padding: .5em;">
+        <span id="activeFilter" style="color: #32cd32; display: none; font-weight: 800;" onclick="">Filter Active</span>
+      </div>
     </div>
     <div class="pull-right" style="padding-bottom:1em;">
-      <input type="text" class="form-control" ng-model="search.terms" placeholder="Term Search" />
+      <input type="text" class="form-control searchBox" ng-model="search.terms" placeholder="Term Search" />
     </div>
     <!-- <div class="clearfix"></div> -->
   </div>
-  <div collapse="!listing.collapse" id="collapsableBox">
+  <div class="collapsableBox collapse" collapse="!listing.collapse" style="display: block;">
     <hr style="width:100%;margin-top:0px;margin-bottom:0.5em;">
-    <div class="filterRow">
+    <div class="filterRow hide">
       <div>
         <div class="filterTitle">State</div>
         <select id="state" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
@@ -121,7 +123,7 @@
       </div>
     </div>
 
-    <div class="filterRow">
+    <div class="filterRow hide">
       <div>
         <div class="filterTitle">Max Team Limit</div>
         <select id="maxTeams" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
@@ -211,7 +213,7 @@
         <div style="width: inherit; display: inline;">
           <button class="btn btn-default btn-xs" ng-click="listing.collapse = !listing.collapse" onclick="modifyTRow(this);"><span class="glyphicon glyphicon-eye-open"></span></button>
           <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span></button>
-          <button class="btn btn-default btn-xs" onclick="runUpdate2();"><span class="glyphicon glyphicon-folder-open"></span></button>
+          <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-folder-open"></span></button>
         </div>
       </div>
       <div class="listingItem">
