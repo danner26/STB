@@ -90,7 +90,7 @@
     "grunt-protractor-runner": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.7.0",
-    "gulp-autoprefixer": "^2.3.1",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-csslint": "~0.1.5",
     "gulp-cssmin": "~0.2.0",
