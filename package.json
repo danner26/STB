@@ -44,7 +44,7 @@
     "grunt-cli": "~0.1.13",
     "helmet": "~0.9.1",
     "jasmine-core": "^2.3.4",
-    "lodash": "^3.10.0",
+    "lodash": "^4.17.10",
     "method-override": "^2.3.3",
     "mocha": "~5.0.4",
     "mongodb-core": "^3.0.4",
